@@ -4,43 +4,46 @@
 
 double askForUserInput()
 {
-    double point = 0;
-    printf("Enter a number: \n");
-    scanf("%lf", &point);
-    return point;
+    double startingPoint = 0;
+    //printf("Enter a number: \n");
+    scanf("%lf", &startingPoint);
+    return startingPoint;
 }
 
 double calculateDiameter()
 {
     // Gather our inputs
+    printf("Enter a number for point x1: \n");
+    int x1 = askForUserInput();
+    printf("Enter a number for point x2: \n");
+    int x2 = askForUserInput();
+    printf("Enter a number for point y1: \n");
+    int y1 = askForUserInput();
+    printf("Enter a number for point y2: \n");
+    int y2 = askForUserInput();
 
-    int x_1 = askForUserInput();
-    int y_1 = askForUserInput();
-    int x_2 = askForUserInput();
-    int y_2 = askForUserInput();
-
-    printf("Point #1 entered: x1 = %d; y1 = %d\n", x_1, y_1);
-    printf("Point #2 entered: x2 = %d; y2 = %d\n", x_2, y_2);
+    printf("Point #1 entered: x1 = %d; y1 = %d\n", x1, y1);
+    printf("Point #2 entered: x2 = %d; y2 = %d\n", x2, y2);
 
     // Create our distance formula
 
-    double diameter = (x_2 - x_1) * (x_2 - x_1) + (y_2 - y_1) * (y_2 - y_1);
-    double diameter_final = sqrt(diameter);
-    return diameter_final;
+    double diameter = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
+    double diameterFinal = sqrt(diameter);
+    return diameterFinal;
 }
 
 double calculateDistance()
 {
-    double distance_final = calculateDiameter();
-    printf("The distance between the two points is %0.2lf\n", distance_final);
-    return distance_final;
+    double distanceFinal = calculateDiameter();
+    printf("The distance between the two points is %0.3lf\n", distanceFinal);
+    return distanceFinal;
 }
 
 double calculatePerimeter()
 {
     double diameter = calculateDiameter();
     double perimeter = PI * diameter;
-    printf("The perimeter of the city encompassed by your request is %0.2lf\n", perimeter);
+    printf("The perimeter of the city encompassed by your request is %0.3lf\n", perimeter);
     return 4.0;
 }
 
@@ -48,21 +51,21 @@ double calculateArea()
 {
     double radius = calculateDiameter() * 0.5;
     double area = radius * radius * PI;
-    printf("The area of the city encompassed by your request is %0.2lf\n", area);
+    printf("The area of the city encompassed by your request is %0.3lf\n", area);
     return 2.0;
 }
 
 double calculateWidth()
 {
     double width = calculateDiameter();
-    printf("The width of the city encompassed by your request is %0.2lf\n", width);
+    printf("The width of the city encompassed by your request is %0.3lf\n", width);
     return 2.0;
 }
 
 double calculateHeight()
 {
     double height = calculateDiameter();
-    printf("The height of the city encompassed by your request is %0.2lf\n", height);
+    printf("The height of the city encompassed by your request is %0.3lf\n", height);
     return 2.0;
 }
 
