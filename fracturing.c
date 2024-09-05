@@ -40,10 +40,13 @@ double askForUserInput()
 double calculateDiameter()
 {
     // Gather our inputs
-
+    printf("Enter a value for X1: \n");
     int x1 = askForUserInput();
+    printf("Enter a value for X2: \n");
     int x2 = askForUserInput();
+    printf("Enter a value for Y1: \n");
     int y1 = askForUserInput();
+    printf("Enter a value for Y2: \n");
     int y2 = askForUserInput();
 
     printf("Point #1 entered: x1 = %d; y1 = %d\n", x1, y1);
